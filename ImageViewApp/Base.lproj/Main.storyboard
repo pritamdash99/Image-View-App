@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageViewApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KZH-x1-k4p">
+                                <rect key="frame" x="66" y="301" width="288" height="32"/>
+                                <segments>
+                                    <segment title="Nature 1"/>
+                                    <segment title="Nature 2"/>
+                                    <segment title="Nature 3"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlSelected" destination="BYZ-38-t0r" eventType="valueChanged" id="3gy-2r-Lnv"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="natureImage1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Zis-ea-sNp">
+                                <rect key="frame" x="63" y="103" width="288" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="TSP-5n-e8n"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KZH-x1-k4p" secondAttribute="trailing" constant="60" id="3tQ-aZ-cx1"/>
+                            <constraint firstItem="KZH-x1-k4p" firstAttribute="top" secondItem="Zis-ea-sNp" secondAttribute="bottom" constant="25" id="Ief-k8-OuS"/>
+                            <constraint firstItem="KZH-x1-k4p" firstAttribute="width" secondItem="Zis-ea-sNp" secondAttribute="width" id="OsB-jU-nW8"/>
+                            <constraint firstItem="Zis-ea-sNp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="YNM-4U-JfB"/>
+                            <constraint firstItem="KZH-x1-k4p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="nNT-J4-ooh"/>
+                            <constraint firstItem="Zis-ea-sNp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="ywN-Dr-Od3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Zis-ea-sNp" id="Gdi-2G-L40"/>
+                        <outlet property="segmentedControl" destination="KZH-x1-k4p" id="lLw-4q-q0P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="65.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="natureImage1.jpg" width="146.8800048828125" height="92.160003662109375"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
